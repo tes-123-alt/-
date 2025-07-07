@@ -1,96 +1,108 @@
 <!DOCTYPE html>
-<html>
-   <head>
-       <meta chareset="utf-8">
-       <title>сайт регины</title>
-       <style tipe="text/css">
-           h1 {
-              font-size: 150%;
-              font-family: Verdana, Arial, Helvetica, sans-serif;
-              color: #6a18bd
-           }
-           html {
-               min-height: 100%;
-           }
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощник в выборе профессии</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Образование будущего: Центр Сириус</h1>
+            <p>Мы подберём лучшую программу обучения и посоветуем оптимальную профессию для вас!</p>
+        </header>
 
-           body {
-               background-color: #ebaee8
-           }
-           h2 {
-               font-size: 120%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #9352a9
-           }
-           footer {
-               font-size: 120%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #44024b
-           }
-           li {
-               font-size: 100%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #50477e
-           }
-           h3 {
-               font-size: 120%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #5f1f6f
-           }
-           dt {
-               font-size: 120%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #443a75
-           }
-           dd {
-               font-size: 90%;
-               font-family: Verdana, Arial, Helvetica, sans-serif;
-               color: #21126f
-           }
-       </style>
-   </head>
-   <body>
-       <header>
-           <h1>Персональный сайт Регины Юсуповой</h1>
-       </header>
-       <article>
-           <h2>Добро пожаловать!</h2>
-           <p>Рада приветствовать Вас на своем сайте.</p>
-       </article>
-       <footer>
-           Мои качества
-       </footer>
-       <ul>
-           <li>Доброта</li>
-           <li>Храбрость</li>
-           <li>Милосердие</li>
-           <li>Честность</li>
-       </ul>
-       <article>
-           <h3>Обо мне</h3>
-           <p>Краткая информация</p>
-       </article>
-       <dl>
-           <dt>Школа</dt>
-           <dd>Закончила 10 Лукойл класс</dd>
-           <dt>Хобби</dt>
-           <dd>Ходила в ДШИ и на тхэквандо, люблю читать и мастерить всякие вещи</dd>
-           <dt>Ожидание от смены</dt>
-           <dd>Хочу освоить новое</dd>
-       </dl>
-       <table border="1" width="100%" cellpadding="5">
+        <form id="career-choice-form">
+            <section>
+                <h2>Основная информация</h2>
+                <label for="first-name">Ваше имя:</label>
+                <input type="text" id="first-name" required>
 
-           <tr>
-               <th>Возраст</th>
-               <th>17 лет</th>
-           </tr>
-           <tr>
-               <th>Город</th>
-               <th>Салехард</th>
-           </tr>
-           <tr>
-               <th>Отряд</th>
-               <th>7</th>
-           </tr>
-       </table>
-   </body>
+                <label for="last-name">Фамилия:</label>
+                <input type="text" id="last-name" required>
+
+                <label for="age">Ваш возраст:</label>
+                <input type="number" id="age" min="14" max="18" required>
+
+                <label for="place-of-residence">Где вы живёте?</label>
+                <select id="place-of-residence" required>
+                    <option value="" disabled selected>Выберите регион</option>
+                    <option value="moscow">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                    <option value="regional-city">Другое</option>
+                    <option value="village">Село</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Семья и окружение</h2>
+                <label for="family-status">Кто живёт вместе с вами?</label>
+                <select id="family-status" required>
+                    <option value="" disabled selected>Выберите ситуацию</option>
+                    <option value="parents">Родители</option>
+                    <option value="guardians">Попечители</option>
+                    <option value="alone">Самостоятельно</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Предпочтения и интересы</h2>
+                <label for="preferred-subjects">Какие предметы вам ближе всего?</label>
+                <select multiple id="preferred-subjects" required>
+                    <option value="math">Математика</option>
+                    <option value="languages">Иностранные языки</option>
+                    <option value="humanities">Гуманитарные науки</option>
+                    <option value="technology">Техника и технология</option>
+                    <option value="creative">Творчество и искусство</option>
+                    <option value="sciences">Естественные науки</option>
+                </select>
+
+                <label for="hobbies">Что приносит вам радость?</label>
+                <select multiple id="hobbies" required>
+                    <option value="coding">Программирование</option>
+                    <option value="writing">Литературное творчество</option>
+                    <option value="painting">Рисование и изобразительное искусство</option>
+                    <option value="singing-dancing">Музыкальное и танцевальное искусство</option>
+                    <option value="crafting">Рукоделие и ремесла</option>
+                    <option value="gaming">Игры и развлечения</option>
+                    <option value="cooking">Готовка и кулинария</option>
+                    <option value="traveling">Путешествия и туризм</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Особенности личности</h2>
+                <label for="traits">Основные черты вашего характера:</label>
+                <select multiple id="traits" required>
+                    <option value="analytical">Аналитичность</option>
+                    <option value="creativity">Творческое начало</option>
+                    <option value="empathy">Эмпатия</option>
+                    <option value="organization">Организационные способности</option>
+                    <option value="teamwork">Командная работа</option>
+                    <option value="leadership">Лидерство</option>
+                    <option value="communication">Эффективное общение</option>
+                    <option value="technical">Технические навыки</option>
+                </select>
+            </section>
+
+            <button type="submit" class="submit-btn">Получить рекомендации</button>
+        </form>
+
+        <div id="result-area" class="hidden">
+            <h2>Индивидуальные рекомендации по выбору профессии</h2>
+            <div id="result-text"></div>
+        </div>
+
+        <div class="info-section">
+            <h2>Образовательный центр "Сириус"</h2>
+            <img src="sirius.jpg" alt="Центр Сириус" class="center-image">
+            <p>"Сириус" — Федеральная территория инновационного образования, расположенная в Сочи. Она включает современные лаборатории, площадки для научного творчества и культурные пространства, объединяя лучших преподавателей и студентов страны.</p>
+
+        </div>
+    </div>
+
+    <script src="Java.js"></script>
+</body>
 </html>
+
